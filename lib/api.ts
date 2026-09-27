@@ -61,8 +61,8 @@ export async function deleteNote(id: string): Promise<Note> {
   return response.data;
 }
 
-export async function fetchNoteById(id: string) {
-  const response = await axios.get(
+export async function fetchNoteById(id: string): Promise<Note> {
+  const response = await axios.get<Note>(
     `https://notehub-public.goit.study/api/notes/${id}`,
     {
       headers: {
